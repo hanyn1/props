@@ -1,21 +1,16 @@
-import Data from '../DataBase/Data';
-import React, { useState } from 'react';
+
+import React from 'react';
 import FilmList from './FilmList';
 import Search from './Search';
 import 'bootstrap/dist/css/bootstrap.css';
 
-export default function Films() {
-  const [filteredFilms, setFilteredFilms] = useState(Data);
-
-  const handleSearch = (searchResults) => {
-    setFilteredFilms(searchResults);
-  };
-
+export default function Films({ films, onSearch }) {
+  
   return (
     <div>
-      <Search films={Data} onSearch={handleSearch} />
+      <Search films={films} onSearch={onSearch} />
       <div className="row">
-        {filteredFilms.map((film) => (
+        {films.map((film) => (
           <div className="col-sm-6 mb-3 mb-sm-0" key={film.id}>
             <div className="card">
               <div className="card-body">
