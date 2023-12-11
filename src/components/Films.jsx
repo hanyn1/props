@@ -1,14 +1,14 @@
 
 import React from 'react';
 import FilmList from './FilmList';
-import Search from './Search';
+import './films.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
-export default function Films({ films, onSearch }) {
+export default function Films({ films }) {
   
   return (
     <div>
-      <Search films={films} onSearch={onSearch} />
+      <h1 style={{color:'red'}}>THE BEST FILM LIST </h1>
       <div className="row">
         {films.map((film) => (
           <div className="col-sm-6 mb-3 mb-sm-0" key={film.id}>
